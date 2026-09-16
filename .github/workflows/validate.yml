@@ -1,0 +1,34 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select Xcode 16
+        run: sudo xcode-select --switch /Applications/Xcode_16.4.app
+      - name: Validate manifest
+        run: swift package dump-package
+      - name: Resolve dependencies
+        run: swift package resolve
+      - name: Build and test iOS consumers
+        run: >-
+          xcodebuild test
+          -scheme CloudXCore
+          -destination 'platform=iOS Simulator,name=iPhone 16 Pro'
+          CODE_SIGNING_ALLOWED=NO
+      - name: Verify artifact checksum
+        run: |
+          curl --fail --location --output /tmp/CloudXCore.xcframework.zip \
+            https://github.com/cloudx-io/cloudx-ios/releases/download/sdk/3.9.1/CloudXCore.xcframework.zip
+          test "$(swift package compute-checksum /tmp/CloudXCore.xcframework.zip)" = \
+            "4e225349aaef0158fb6eca80afd683ecc5a2433148bb1d0df887520067ef64d5"
