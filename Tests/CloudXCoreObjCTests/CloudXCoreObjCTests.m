@@ -7,7 +7,7 @@
 @implementation CloudXCoreObjCTests
 
 - (void)testFrameworkIsLinked {
-    XCTAssertEqualObjects(CloudXCore.shared.sdkVersion, @"3.9.1");
+    XCTAssertEqualObjects(CloudXCore.shared.sdkVersion, @"3.10.0");
 }
 
 @end
