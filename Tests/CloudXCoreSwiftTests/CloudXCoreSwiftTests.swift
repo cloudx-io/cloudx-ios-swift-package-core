@@ -3,6 +3,6 @@ import XCTest
 
 final class CloudXCoreSwiftTests: XCTestCase {
     func testFrameworkIsLinked() {
-        XCTAssertEqual(CloudXCore.shared.sdkVersion, "3.10.0")
+        XCTAssertEqual(CloudXCore.shared.sdkVersion, "3.11.0")
     }
 }
