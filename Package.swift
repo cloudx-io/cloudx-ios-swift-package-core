@@ -16,8 +16,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "CloudXCore",
-            url: "https://github.com/cloudx-io/cloudx-ios-swift-package-core/releases/download/binary/3.12.0/CloudXCore.xcframework.zip",
-            checksum: "413134849881f6cc05c294379b49bec7218eadfa367c2bcb49741690e482da15"
+            url: "https://github.com/cloudx-io/cloudx-ios-swift-package-core/releases/download/binary/3.13.0/CloudXCore.xcframework.zip",
+            checksum: "168a5839f4d97c567115c058b9245b59b401fb1aacae40d9576cdaf7c426397c"
         ),
         .testTarget(
             name: "CloudXCoreSwiftTests",

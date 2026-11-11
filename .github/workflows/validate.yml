@@ -29,6 +29,6 @@ jobs:
       - name: Verify artifact checksum
         run: |
           curl --fail --location --output /tmp/CloudXCore.xcframework.zip \
-            https://github.com/cloudx-io/cloudx-ios-swift-package-core/releases/download/binary/3.12.0/CloudXCore.xcframework.zip
+            https://github.com/cloudx-io/cloudx-ios-swift-package-core/releases/download/binary/3.13.0/CloudXCore.xcframework.zip
           test "$(swift package compute-checksum /tmp/CloudXCore.xcframework.zip)" = \
-            "413134849881f6cc05c294379b49bec7218eadfa367c2bcb49741690e482da15"
+            "168a5839f4d97c567115c058b9245b59b401fb1aacae40d9576cdaf7c426397c"
