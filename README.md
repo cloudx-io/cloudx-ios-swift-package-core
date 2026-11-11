@@ -15,7 +15,7 @@ Add this package in Xcode:
 https://github.com/cloudx-io/cloudx-ios-swift-package-core.git
 ```
 
-Select version `3.12.0` or use the `Up to Next Major Version` rule from `3.12.0`.
+Select version `3.13.0` or use the `Up to Next Major Version` rule from `3.13.0`.
 Add the `CloudXCore` product to your app target.
 
 Add `-ObjC` to the app target's **Other Linker Flags**. CloudX uses Objective-C
